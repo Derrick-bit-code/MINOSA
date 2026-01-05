@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Gems | Jewelry Shop</title>
+
+  <!-- ========== CSS ========== -->
+   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222;
+      --primary: #b48a3d;
+      --card-bg: #f9f9f9;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --card-bg: #1e1e1e;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <h1>MINOSA</h1>
+    <nav>
+      <a href="#index.html">Home</a>
+      <a href="#about.html">About</a>
+      <a href="#contact.html">Contact</a>
+    </nav>
+    <div>
+      🛒 Cart: <span id="cartCount">0</span>
+      <button onclick="toggleTheme()">🌙</button>
+    </div>
+  </header>
+
+  <!-- ========== HOME ========== -->
+  <section id="home" class="container">
+    <h2 id="greeting"></h2>
+    <p>Luxury handmade jewelry for every occasion.</p>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section id="products" class="container">
+    <h2>Our Jewelry</h2>
+    <div class="products">
+
+      <!-- Replace image1.jpg ... image8.jpg with your real images -->
+       <img src="images/download (1).jpeg">
+
+      <div class="product">
+        <img src="images/download (1).jpeg" alt="Gold Earrings" />
+        <h3>Gold Earrings</h3>
+        <p>KES 4,500</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/download (2).jpeg" alt="Van Cleef Bracelet" />
+        <h3>Van Cleef Bracelet</h3>
+        <p>KES 6,800</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/download (3).jpeg" alt="Gold Bracelet" />
+        <h3>Gold Bracelet</h3>
+        <p>KES 4,900</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/download (4).jpeg" alt="Necklace" />
+        <h3>Necklace</h3>
+        <p>KES 3,200</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/download.jpeg" alt="Ring" />
+        <h3>Ring</h3>
+        <p>KES 3,200</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/Men's Gold Gemstone Bracelet.jpeg" alt="Men's Gold Gemstone Bracelet" />
+        <h3>Men's Gold Gemstone Bracelet</h3>
+        <p>KES 4,000</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/Thin Lennox Onyx Ring, Sterling Silver.jpeg" alt="Thin Lennox Onyx Ring, Sterling Silver" />
+        <h3>Thin Lennox Onyx Ring, Sterling Silver</h3>
+        <p>KES 5,000</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/Triple Knot Earrings - Gold.jpeg" alt="Triple Knot Earrings" />
+        <h3>Triple Knot Earrings</h3>
+        <p>KES 3,900</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="container">
+    <h2>About Us</h2>
+    <p>
+      MINOSA is a local jewelry brand specializing in high-quality,
+      affordable, and stylish accessories. Our mission is to bring beauty
+      and confidence to every customer.
+    </p>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="container">
+    <h2>Contact Us</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MINOSA</p>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+   <script src="js/script.js"></script>
+
+  <script>
+    let cart = 0;
+
+    function addToCart() {
+      cart++;
+      document.getElementById('cartCount').textContent = cart;
+    }
+
+    function validateForm() {
+      const email = document.getElementById('email').value;
+      if (!email.includes('@')) {
+        alert('Please enter a valid email address');
+        return false;
+      }
+      alert('Message sent successfully!');
+      return true;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    function greetingMessage() {
+      const hours = new Date().getHours();
+      let greeting = 'Hello';
+
+      if (hours < 12) greeting = 'Good Morning';
+      else if (hours < 18) greeting = 'Good Afternoon';
+      else greeting = 'Good Evening';
+
+      const date = new Date().toDateString();
+      document.getElementById('greeting').textContent = `${greeting}! Today is ${date}`;
+    }
+
+    greetingMessage();
+  </script>
+
+</body>
+</html>
